@@ -8,9 +8,9 @@ plugins {
 val apiKey: String = run {
     val file = rootProject.file("local.properties")
     if (file.exists()) {
-        val props = java.util.Properties()
-        file.inputStream().use { props.load(it) }
-        props.getProperty("API_KEY", "")
+        val lines = file.readLines()
+        val keyLine = lines.find { it.startsWith("API_KEY=") }
+        keyLine?.substringAfter("API_KEY=") ?: ""
     } else {
         ""
     }
