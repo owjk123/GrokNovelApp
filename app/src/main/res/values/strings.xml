@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grok 小说生成器</string>
+    <string name="generate_story">生成新故事</string>
+    <string name="loading">正在生成中...</string>
+    <string name="error_network">网络错误，请检查网络连接</string>
+    <string name="error_api">API 调用失败，请重试</string>
+    <string name="story_choices">请选择剧情走向</string>
+    <string name="new_story">开启新故事</string>
+    <string name="select_genre">选择小说类型</string>
+    <string name="enter_protagonist">输入主角名字</string>
+    <string name="protagonist_hint">例如：林风</string>
+    <string name="start_generating">开始创作</string>
+    <string name="history">历史记录</string>
+    <string name="clear_history">清空历史</string>
+    <string name="retry">重试</string>
+    <string name="continue_story">继续故事</string>
+    
+    <!-- 小说类型 -->
+    <string name="genre_fantasy">奇幻冒险</string>
+    <string name="genre_scifi">科幻未来</string>
+    <string name="genre_romance">浪漫爱情</string>
+    <string name="genre_mystery">悬疑推理</string>
+    <string name="genre_xianxia">仙侠修真</string>
+    <string name="genre_wuxia">武侠江湖</string>
+</resources>
