@@ -17,6 +17,7 @@
 *.dex
 *.class
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.log
 *.bak
 *.orig
