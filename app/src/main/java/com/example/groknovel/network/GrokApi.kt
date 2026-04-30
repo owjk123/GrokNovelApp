@@ -84,7 +84,7 @@ class GrokApi {
     /**
      * 构建请求体 JSON
      */
-    private fun buildRequestBody(prompt: String, storyHistory: String): String {
+    private fun buildRequestBody(prompt: String, storyHistory: String): RequestBody {
         val messages = JSONArray()
 
         // 添加系统提示
@@ -110,13 +110,15 @@ class GrokApi {
         }
         messages.put(userMessage)
 
-        // 构建完整请求体
-        return JSONObject().apply {
+        // 构建完整请求体并转换为 RequestBody
+        val jsonBody = JSONObject().apply {
             put("model", MODEL)
             put("messages", messages)
             put("temperature", TEMPERATURE)
             put("max_tokens", MAX_TOKENS)
         }.toString()
+        
+        return jsonBody.toRequestBody(JSON_MEDIA_TYPE)
     }
 
     /**

@@ -217,6 +217,7 @@ fun StoryScreen() {
 /**
  * 初始设置界面
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun InitialSetupContent(
     state: com.example.groknovel.viewmodel.StoryState,
