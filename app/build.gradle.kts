@@ -5,10 +5,15 @@ plugins {
 }
 
 // 读取 local.properties 中的 API Key
-val localProperties = java.util.Properties()
-val localPropertiesFile = rootProject.file("local.properties")
-if (localPropertiesFile.exists()) {
-    localProperties.load(localPropertiesFile.inputStream())
+val apiKey: String = run {
+    val file = rootProject.file("local.properties")
+    if (file.exists()) {
+        val props = java.util.Properties()
+        file.inputStream().use { props.load(it) }
+        props.getProperty("API_KEY", "")
+    } else {
+        ""
+    }
 }
 
 android {
@@ -28,7 +33,7 @@ android {
         }
 
         // 从 local.properties 注入 API Key 到 BuildConfig
-        buildConfigField("String", "API_KEY", "\"${localProperties.getProperty("API_KEY", "")}\"")
+        buildConfigField("String", "API_KEY", "\"$apiKey\"")
     }
 
     buildTypes {
